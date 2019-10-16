@@ -1,4 +1,5 @@
 import random
+import time # Används vid olika moment, Delay
 print ("Välkommen till vårat Sten,Sax,Pase pogram")
 
 
@@ -7,7 +8,7 @@ print ("Välkommen till vårat Sten,Sax,Pase pogram")
 gamemode = 0
 
 while gamemode == 0:
-    gamemode = 2
+    gamemode = int(input("[1]Spela mot en kompis [2]Spela mot dator"))
     if gamemode == 1:
         print("Du har valt att spela 1v1")
 
@@ -20,38 +21,48 @@ while gamemode == 0:
         sax = 1
         sten = 2
         pase = 3
-        player1 = input("[1]sax, [2]sten, [3]påse: ")
+        player1 = int(input("[1]sax, [2]sten, [3]påse: "))
+        pcchoice = int(random.randint(1, 3))
         while player1 == 1:
-            pcchoice = input(random.randint(1, 3))
             if pcchoice == 1:
                 print("oavgjort")
+                player1 = 0
             elif pcchoice == 2:
                 print("förlust")
+                player1 = 0
             elif pcchoice == 3:
                 print("vinst")
+                player1 = 0
             else:
-                player1 = 1
+                player1 = 0
 
         while player1 == 2:
-            pcchoice = input(random.randint(1, 3))
             if pcchoice == 1:
                 print("förlust")
+                player1 = 0
             elif pcchoice == 2:
                 print("oavgjort")
+                player1 = 0
             elif pcchoice == 3:
                 print("vinst")
+                player1 = 0
             else:
-                player1 = 2
+                player1 = 0
 
         while player1 == 3:
-            pcchoice = input(random.randint(1, 3))
             if pcchoice == 1:
                 print("förlust")
+                player1 = 0
             elif pcchoice == 2:
                 print("vinst")
+                player1 = 0
             elif pcchoice == 3:
                 print("oavgjort")
+                player1 = 0
             else:
-                player1 = 1
-    else:
-        gamemode = 0
+                player1 = 0
+        else:
+            time.sleep(1)
+            print("Spela igen!")
+            time.sleep(1)
+            gamemode = 0
