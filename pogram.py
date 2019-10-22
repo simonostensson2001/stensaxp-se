@@ -10,14 +10,14 @@ gamemode = 0
 
 while menu == 0:
     gamemode = int(input("[1]Spela mot en kompis [2]Spela mot dator: "))
-    if gamemode == 1:
+    while gamemode == 1:
         print("Du har valt att spela 1v1")
 
 
 
         player1 = input("[1]sax, [2]sten, [3]påse: ")
         player2 = input("[1]sax, [2]sten, [3]påse: ")
-    elif gamemode == 2:
+    while gamemode == 2:
         print("Du har valt att spela mot pc")
         sax = 1
         sten = 2
@@ -120,11 +120,13 @@ while menu == 0:
                 Player1Score = 0
                 PcScore = 0
                 menu = 0
+                break
             elif Player1Score == 2:
                 print("Du vann")
                 Player1Score = 0
                 PcScore = 0
                 menu = 0
+                break
             else:
                 print("Spela igen!")
                 time.sleep(1)
