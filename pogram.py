@@ -1,13 +1,14 @@
 import random
 import time # Används vid olika moment, Delay
-print ("Välkommen till vårat Sten,Sax,Pase pogram")
+print ("Välkommen till vårat Sten, Sax, Påse spel")
 PcScore = 0
 Player1Score = 0
 Player2Score = 0
 
+menu = 0
 gamemode = 0
 
-while gamemode == 0:
+while menu == 0:
     gamemode = int(input("[1]Spela mot en kompis [2]Spela mot dator: "))
     if gamemode == 1:
         print("Du har valt att spela 1v1")
@@ -60,6 +61,8 @@ while gamemode == 0:
                 print("datorn spelade sax")
                 time.sleep(1)
                 print("vinst")
+                Player1Score = Player1Score + 1
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             elif pcchoice == 2:
                 print("Du spelade sten")
@@ -67,6 +70,7 @@ while gamemode == 0:
                 print("Datorn spelade sten")
                 time.sleep(1)
                 print("oavgjort")
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             elif pcchoice == 3:
                 print("Du spelade sten")
@@ -74,6 +78,8 @@ while gamemode == 0:
                 print("Datorn spelade påse")
                 time.sleep(1)
                 print("förlust")
+                PcScore = PcScore + 1
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             else:
                 player1 = 0
@@ -85,6 +91,8 @@ while gamemode == 0:
                 print("Datorn spelade sax")
                 time.sleep(1)
                 print("förlust")
+                PcScore = PcScore + 1
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             elif pcchoice == 2:
                 print("Du spelade påse")
@@ -92,6 +100,8 @@ while gamemode == 0:
                 print("Datorn spelade sten")
                 time.sleep(1)
                 print("vinst")
+                Player1Score = Player1Score + 1
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             elif pcchoice == 3:
                 print("Du spelade påse")
@@ -99,16 +109,23 @@ while gamemode == 0:
                 print("Datorn spelade påse")
                 time.sleep(1)
                 print("oavgjort")
+                print("Spelare", Player1Score, "-", PcScore, "Dator",)
                 player1 = 0
             else:
                 player1 = 0
         else:
             time.sleep(1)
             if PcScore == 2:
-                exit()
+                print("Datorn vann")
+                Player1Score = 0
+                PcScore = 0
+                menu = 0
             elif Player1Score == 2:
-                exit()
+                print("Du vann")
+                Player1Score = 0
+                PcScore = 0
+                menu = 0
             else:
                 print("Spela igen!")
                 time.sleep(1)
-                gamemode = 0
+                gamemode = 2
